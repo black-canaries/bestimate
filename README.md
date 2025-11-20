@@ -43,7 +43,33 @@ This is a proof-of-concept build using modern, scalable technologies:
 
 🚧 **Proof of Concept Phase** 🚧
 
-This project is currently in early development. Authentication is disabled for this POC to focus on core functionality. See [PLAN.md](./PLAN.md) for the detailed development roadmap and progress tracking.
+This project is currently in early development. Authentication is disabled for this POC to focus on core functionality.
+
+### ✅ Implemented (Phase 0-3)
+- [x] Expo + React Native setup with NativeWind
+- [x] Expo Router file-based navigation
+- [x] Tab-based navigation (Home, Meals, Glucose, Insulin, Insights)
+- [x] Convex backend with database schemas
+- [x] TypeScript types for all data models
+- [x] CRUD operations for meals, glucose, insulin
+- [x] Meal logging with food search
+- [x] Glucose tracking with statistics
+- [x] Insulin dose logging
+- [x] Dashboard with real-time data
+
+### 🔄 In Progress
+- [ ] AI-powered analysis with Convex Agents
+- [ ] Insulin dosing recommendations
+- [ ] Pattern recognition and insights
+
+### 📋 Planned
+- [ ] Data visualization (charts)
+- [ ] Post-meal analysis
+- [ ] Multi-user authentication
+- [ ] CGM integration
+- [ ] Export functionality
+
+See [PLAN.md](./PLAN.md) for the detailed development roadmap and progress tracking.
 
 ## Getting Started
 
@@ -61,13 +87,37 @@ git clone https://github.com/black-canaries/bestimate.git
 cd bestimate
 
 # Install dependencies
-npm install
+pnpm install
 
-# Set up Convex
+# Set up Convex backend
 npx convex dev
+# This will:
+# - Prompt you to log in to Convex
+# - Create a new deployment
+# - Generate .env.local with your deployment URL
+# - Generate the convex/_generated directory
+
+# In the Convex dashboard, seed the food database:
+# - Navigate to Functions
+# - Run: seedData:seedFoods
+# This will populate the database with 20+ common foods
 
 # Start the development server
-npx expo start
+pnpm start
+```
+
+### Environment Setup
+
+After running `npx convex dev`, you'll have a `.env.local` file with:
+
+```bash
+CONVEX_DEPLOYMENT=https://your-deployment.convex.cloud
+```
+
+Make sure to update `convex-client.ts` with your deployment URL or set:
+
+```bash
+EXPO_PUBLIC_CONVEX_URL=https://your-deployment.convex.cloud
 ```
 
 ### Development Workflow
