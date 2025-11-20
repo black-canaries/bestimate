@@ -3,8 +3,7 @@
 // Copy this to your components/ folder and customize as needed
 
 import React from 'react';
-import { ConvexProvider, ConvexReactClient } from 'convex/react';
-import { ConvexProviderWithAuth } from 'convex/react';
+import { ConvexProvider, ConvexReactClient, ConvexProviderWithAuth } from 'convex/react';
 
 const convex = new ConvexReactClient(process.env.EXPO_PUBLIC_CONVEX_URL!);
 
@@ -13,11 +12,7 @@ interface ConvexAuthProviderProps {
 }
 
 export function ConvexAuthProvider({ children }: ConvexAuthProviderProps) {
-  return (
-    <ConvexProvider client={convex}>
-      {children}
-    </ConvexProvider>
-  );
+  return <ConvexProvider client={convex}>{children}</ConvexProvider>;
 }
 
 // Usage in app/_layout.tsx:

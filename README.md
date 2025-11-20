@@ -49,8 +49,7 @@ This project is currently in early development. Authentication is disabled for t
 
 ### Prerequisites
 - Node.js (v18 or higher)
-- npm or yarn
-- Expo CLI
+- pnpm (package manager)
 - iOS Simulator or Android Emulator (or Expo Go app on physical device)
 
 ### Installation
@@ -61,14 +60,28 @@ git clone https://github.com/black-canaries/bestimate.git
 cd bestimate
 
 # Install dependencies
-npm install
+pnpm install
 
-# Set up Convex
+# Set up Convex (first time only)
+# This will prompt you to login and create/select a Convex project
 npx convex dev
 
-# Start the development server
-npx expo start
+# In a separate terminal, start the Expo development server
+pnpm start
 ```
+
+### First Time Setup
+
+1. **Install dependencies**: `pnpm install`
+2. **Set up Convex**:
+   - Run `npx convex dev` (keep this running in a terminal)
+   - Follow the prompts to login and create a Convex project
+   - This will generate a `.env.local` file with your Convex URL
+3. **Start the app**: In a new terminal, run `pnpm start`
+4. **Choose your platform**:
+   - Press `i` for iOS simulator
+   - Press `a` for Android emulator
+   - Scan QR code with Expo Go app on your phone
 
 ### Development Workflow
 
