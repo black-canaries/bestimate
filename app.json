@@ -1,8 +1,9 @@
 {
   "expo": {
-    "name": "my-expo-app",
-    "slug": "my-expo-app",
+    "name": "Bestimate",
+    "slug": "bestimate",
     "version": "1.0.0",
+    "scheme": "bestimate",
 
     "web": {
       "favicon": "./assets/favicon.png"

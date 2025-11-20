@@ -4,11 +4,7 @@
 
 import React from 'react';
 import { Pressable, Text, PressableProps } from 'react-native';
-import Animated, {
-  useSharedValue,
-  useAnimatedStyle,
-  withSpring,
-} from 'react-native-reanimated';
+import Animated, { useSharedValue, useAnimatedStyle, withSpring } from 'react-native-reanimated';
 import * as Haptics from 'expo-haptics';
 
 interface AnimatedButtonProps extends Omit<PressableProps, 'style'> {
@@ -85,8 +81,7 @@ export default function AnimatedButton({
       onPressOut={handlePressOut}
       onPress={onPress}
       disabled={disabled}
-      {...props}
-    >
+      {...props}>
       <Animated.View
         style={animatedStyle}
         className={`
@@ -95,16 +90,14 @@ export default function AnimatedButton({
           ${sizeClasses[size]}
           ${disabled ? 'opacity-50' : ''}
           ${className}
-        `}
-      >
+        `}>
         <Text
           className={`
-            font-semibold
             text-center
+            font-semibold
             ${textSizeClasses[size]}
             ${textColorClasses[variant]}
-          `}
-        >
+          `}>
           {title}
         </Text>
       </Animated.View>
